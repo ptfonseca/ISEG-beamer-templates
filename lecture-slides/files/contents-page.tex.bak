@@ -1,0 +1,19 @@
+
+% Code to generate the table of contents
+%--------------------------------------------------------------
+
+%\begin{noheadline}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Contents}	
+		
+\hfill
+\parbox[t]{.96\textwidth}{
+  \tableofcontents
+}
+
+\end{frame}
+
+%\end{noheadline}
+
+
