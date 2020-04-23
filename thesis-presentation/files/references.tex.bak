@@ -1,7 +1,0 @@
-
-% Code to generate the "references" section
-%--------------------------------------------------------------
-
-\begin{frame}[allowframebreaks]{References}
-\printbibliography
-\end{frame}

@@ -9,6 +9,7 @@
 *.acn
 *.acr
 *.alg
+*.bcf
 *.bbl
 *.blg
 *.dvi
@@ -17,12 +18,18 @@
 *.ilg
 *.ind
 *.lof
+*.log
 *.lot
 *.maf
 *.mtc
 *.mtc1
+*.nav
 *.out
+*.run.xml
+*.snm
 *.synctex.gz
+*.tex.bak
+*.toc
 
 # OS generated files 
 
