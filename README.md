@@ -6,15 +6,15 @@ This repository contains three beamer templates tailored for [ISEG](https://www.
 
 - A template for [thesis presentations](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/thesis-presentation-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/thesis-presentation-template/presentation.pdf))
 
-- A template for [lecture slides](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/lecture-slides-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/lecture-slides-template/presentation.pdf))
+- A template for [lecture slides](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/lecture-slides-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/lecture-slides-template/presentationpdf))
 
 - A [minimalist multi-purpose template](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/minimalist-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/minimalist-template/presentation.pdf))
 
 ## About the templates
 
-- The **thesis presentation** template has a field for advisor/supervisor name
-- The **lecture slides** template has title and subtitle fields (for course name and lecture subject, respectively).
-- The **minimalist** template has no TOC frame, no TOC on the header, no sections and no subsections
+- The thesis presentation template has a field for advisor/supervisor name
+- The lecture slides template has title and subtitle fields (for course name and lecture subject, respectively)
+- The minimalist template has no TOC frame, no TOC on the header, no sections and no subsections
   
 ## Tl;dr instructions
 
@@ -22,13 +22,13 @@ This repository contains three beamer templates tailored for [ISEG](https://www.
 
 2. Choose a template
 
-3. If you use citations, paste them in biblatex format in the **references.bib** file.
+3. If you use citations, paste them in biblatex format in the references.bib file.
 
-4. Edit the **presentation.tex** file
+4. Edit the presentation.tex file
 
 5. Compile the document (the bibliography, if used, should be compiled with biber)
 
-6. You can find your presentation is in the **presentation.pdf** file
+6. You can find your presentation is in the presentation.pdf file
 
 ## Detailed instructions
 
