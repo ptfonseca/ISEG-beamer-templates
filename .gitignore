@@ -11,6 +11,7 @@
 *.alg
 *.bcf
 *.bbl
+*.bib.bak
 *.blg
 *.dvi
 *.glg
@@ -39,4 +40,4 @@
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db.bib.bak
+Thumbs.db
