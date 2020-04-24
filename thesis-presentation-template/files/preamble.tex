@@ -64,7 +64,8 @@
 \setbeamercolor{section number projected}{bg=Maroon,fg=white}
 \setbeamercolor{subsection number projected}{bg=Maroon,fg=white}
 \setbeamercolor{subsubsection number projected}{bg=Maroon,fg=white}
-\setbeamercolor{block title}{fg=Maroon}
+\setbeamercolor{block title}{use=structure,bg=Maroon,fg=white}
+\setbeamercolor{block body}{bg=black!9,fg=black}
 \setbeamercolor{local structure}{fg=Maroon} 
 
 % ISEG colors on the Itemize bullets 
@@ -84,20 +85,11 @@
 \inserttocsubsection\par%  
 }
 
-% New environment for definitions/theorems with ISEG colors
-%------------------------------------------------------------
-\makeatletter
-\def\th@mystyle{%
-    \normalfont % body font
-    \setbeamercolor{block title example}{bg=BrickRed,fg=white}
-    \setbeamercolor{block body example}{bg=black!9,fg=black}
-    \def\inserttheoremblockenv{exampleblock}
-  }
-\makeatother
-\theoremstyle{mystyle}
-\newtheorem*{defi}{Definition}
-
-\setbeamertemplate{defis}[numbered]
+% Uncomment the following lines if you want
+% theorems and definitions to be numbered
+%-------------------------------------------------------------- 
+% \setbeamertemplate{theorems}[numbered]
+% \setbeamertemplate{definitions}[numbered]
 
 % New command to display two-part functions 
 %--------------------------------------------------------------  
