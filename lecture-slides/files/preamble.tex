@@ -147,6 +147,31 @@
   \endflushleft
 }
 
+% Get rid of the "references" section in the header
+%------------------------------------------------------------
+\makeatletter
+\let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry%
+\def\beamer@writeslidentry@miniframesoff{%
+  \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+  {%else
+    % removed \addtocontents commands
+    \clearpage\beamer@notesactions%
+  }
+}
+\newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
+\newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
+\makeatother
+
+% Add vertical space between the items of the TOC
+%------------------------------------------------------------
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother
+
 % Bibliography packages and options
 %------------------------------------------------------------
 \usepackage[
@@ -236,15 +261,8 @@ natbib=true, backend=biber]{biblatex}
 % No icon in references listing
 %------------------------------------------------------------
 \setbeamertemplate{bibliography item}{}
+
 % path to the .bib file
 %------------------------------------------------------------
-
 \addbibresource{files/references.bib}
 
-\makeatletter
-\patchcmd{\beamer@sectionintoc}
-  {\vfill}
-  {\vskip\itemsep}
-  {}
-  {}
-\makeatother

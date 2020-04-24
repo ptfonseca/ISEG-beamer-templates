@@ -1,41 +1,42 @@
 
+% Preamble
+%--------------------------------------------------------------
 \include{files/preamble}
 
-\title[Presentations with Latex]{Lecture slides with \LaTeX}
+% Title and subtitle
+%--------------------------------------------------------------
+\title[Lecture slides with LaTeX]{Lecture slides with \LaTeX}
 \subtitle{A user friendly template}
+
+% Your name
+%--------------------------------------------------------------
 \author[Pedro Fonseca]{\textbf {Pedro Fonseca}}
+
+% Date
+%--------------------------------------------------------------
 \date{\today}
 
+% Beginning of the document
+%--------------------------------------------------------------
 \begin{document}
 
+% Title page
+%--------------------------------------------------------------
 \include{files/title-page}
+
+% Table of contents page (can be commented out)
+%--------------------------------------------------------------
 \include{files/contents-page}
 
-\section{Introduction}
-
-% Frame
+%--------------------------------------------------------------
+%--------------------------------------------------------------
+%  This is where the frames begin
+%--------------------------------------------------------------
 %--------------------------------------------------------------
 
-\begin{frame}{Before we start}
-
-You should remember the following topics from last lecture:
-
-\begin{itemize}
-
-\item Interesting topic 1
-
-\begin{itemize}
-\item Interesting sub topic 1
-\item Interesting sub topic 2
-\item Interesting sub topic 3
-\end{itemize}
-
-\item Interesting topic 2
-\item Interesting topic 3
-
-\end{itemize}
-
-\end{frame}
+%  Section
+%--------------------------------------------------------------
+\section{Introduction}
 
 % Frame
 %--------------------------------------------------------------
@@ -46,10 +47,10 @@ In this lecture you will see:
 
 \begin{itemize}
 
-\item a plot
+\item a graph
 \item some formulas
 \item some code
-\item some citations
+\item some citations \citep{kass1995}
 
 \end{itemize}
 
@@ -58,37 +59,29 @@ In this lecture you will see:
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}
-	\frametitle{including pictures}
+\begin{frame}{A scatterplot}
 
 This picture is in the ``figures'' folder:
 
 \begin{figure}
-\includegraphics[scale=.075]{figures/benford.png}
+\includegraphics[scale=.5]{figures/outl.png}
+\caption{Fuel consumption (Hwy) vs engine size (displ)}
 \end{figure}
 
 \end{frame}
 
-\section{Some complicated formulas}
+%  Section
+%--------------------------------------------------------------
+\section{Some formulas}
+
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Multinomial - Dirichlet Model}
 
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Mathematical expressions}
-
-\begin{itemize}
-\item Latex is very useful for  expressions.
-\item Which is nice, since this lecture has lots of them!
-\item Lets see some Bayesian model selection formulas.
-\end{itemize}
-
-\end{frame}
-
-
-% Frame
-%--------------------------------------------------------------
-
-\begin{frame}{Multinomial $\land$ Dirichlet Model}
+\begin{frame}{Model selection}
 
 \begin{itemize}
 
@@ -109,6 +102,8 @@ This picture is in the ``figures'' folder:
 
 \item Bayes factor: $B_{01}(\bm{x}) = \frac{m_0(\bm{x})}{m_1(\bm{x})} = \frac{\prod_{i=1}^{k+1}{(\theta_{0i}}^{x_i}) \prod_{i=1}^{k+1}[\Gamma(\alpha_i)] \Gamma [\sum_{i=1}^{k+1}(\alpha_i+x_i)]}{\Gamma(\sum_{i=1}^{k+1} \alpha_i) \prod_{i=1}^{k+1}\Gamma(\alpha_i+x_i)}$
 
+\item For an interesting application see \citet{pericchiTorres2011}.
+
 \end{itemize}
 
 \end{frame}
@@ -116,7 +111,29 @@ This picture is in the ``figures'' folder:
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Binomial $\land$ Beta Model}
+\begin{frame}{Parameter estimation}
+
+\begin{itemize}
+
+\item Prior: $\bm{\theta}|\bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$
+
+\item Posterior: $\bm{\theta} | \bm{\alpha}, \bm{x} \sim \operatorname{Dir}_k(\bm{\alpha} + \bm{x}) \rightarrow$ Mean, mode, credible intervals.
+
+\item For an interesting application see \citet{ley1996peculiar}.
+
+
+\end{itemize}
+
+\end{frame}
+
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Binomial - Beta Model}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Model selection}
 
 \begin{itemize}
 
@@ -145,26 +162,32 @@ This picture is in the ``figures'' folder:
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Want to know more?}
+\begin{frame}{Parameter estimation}
 
 \begin{itemize}
 
-\item  To learn about Bayes factors see \cite{kass1995}.
+\item Prior: $\theta \sim \operatorname{Beta}(a,b) $
 
-\item For an interesting application of the Multinomial $\land$ Dirichlet model see \citet{pericchiTorres2011}.
+\item Posterior: $\theta | x \sim \operatorname{Beta}(a+x, b+N-x ) \rightarrow$ Mean, mode, credible intervals
 
 \end{itemize}
 
 \end{frame}
 
+%  Section
+%--------------------------------------------------------------
 \section{Code chunks}
+
+%  Sub-section
+%--------------------------------------------------------------
+\subsection{Python code}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}[fragile]{Some python code}
 
-This lecture also has some examples with code. Lets print the Fibonacci sequence:
+Lets print the Fibonacci sequence. 
 
 \begin{verbatim}
 nterms = int(input("How many terms? "))
@@ -182,12 +205,16 @@ while count < nterms:
 
 \end{frame}
 
+%  Sub-section
+%--------------------------------------------------------------
+\subsection{R code}
+
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}[fragile]{Now some R code}
 
-There is also a verbatin environment with background color.
+I also included a a verbatim environment with background color:
 
 \begin{cverbatim}
 getmode <- function(v) {
@@ -201,24 +228,14 @@ getmode <- function(v) {
 
 With this R code you can build a function that calculates the mode.
 
-
 \end{frame}
 
-\section{Conclusion}
-
-% Frame
+% Bibliography page (can be commented out)
 %--------------------------------------------------------------
-
-\begin{frame}{summary}
-\begin{itemize}
-
-\item we talked about
-
-\end{itemize}
-\end{frame}
-
 \include{files/references-section}
 
+% End of the document
+%--------------------------------------------------------------
 \end{document}
 
 
