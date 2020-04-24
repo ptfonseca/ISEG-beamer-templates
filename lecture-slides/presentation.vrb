@@ -1,0 +1,16 @@
+\frametitle{Now some R code}
+
+I also included a a verbatim environment with background color:
+
+\begin{cverbatim}
+getmode <- function(v) {
+
+  uniqv <- unique(v)
+
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+
+}
+\end{cverbatim}
+
+With this R code you can build a function that calculates the mode.
+
