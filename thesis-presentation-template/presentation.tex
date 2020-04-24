@@ -1,24 +1,241 @@
 
+% Preamble
+%--------------------------------------------------------------
 \include{files/preamble}
 
-\title[Presentations with Latex]{Presentations with \LaTeX}
+% Title and subtitle
+%--------------------------------------------------------------
+\title[Thesis presentation with Latex]{Thesis presentation with \LaTeX}
+% \subtitle{A user friendly template}
+
+% Your name and advisor's name
+%--------------------------------------------------------------
 \author[Pedro Fonseca]{\textbf {Pedro Fonseca} \\ \footnotesize Advisor: Prof Dr. Rui Paulo}
+
+% Date
+%--------------------------------------------------------------
 \date{\today}
 
+% Beginning of the document
+%--------------------------------------------------------------
 \begin{document}
 
+% Title page
+%--------------------------------------------------------------
 \include{files/title-page}
+
+% Table of contents page (can be commented out)
+%--------------------------------------------------------------
 \include{files/contents-page}
 
-\include{files/frames}
+%--------------------------------------------------------------
+%--------------------------------------------------------------
+%  This is where the frames begin
+%--------------------------------------------------------------
+%--------------------------------------------------------------
 
+%  Section
+%--------------------------------------------------------------
+\section{Introduction}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Before we start}
+
+In this presentation you will see:
+
+\begin{itemize}
+
+\item a graph
+\item some formulas
+\item some code
+\item some citations \citep{kass1995}
+
+\end{itemize}
+
+\end{frame}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{A scatterplot}
+
+This picture is in the ``figures'' folder:
+
+\begin{figure}
+\includegraphics[scale=.5]{figures/outl.png}
+\caption{Fuel consumption (Hwy) vs engine size (displ)}
+\end{figure}
+
+\end{frame}
+
+%  Section
+%--------------------------------------------------------------
+\section{Some formulas}
+
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Multinomial - Dirichlet Model}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Model selection}
+
+\begin{itemize}
+
+\item Likelihood: $\bm{x}|\bm{\theta} \sim \mathcal{M}_k(N,\bm{\theta})$
+
+\item Hypotheses:  $ H_0: \bm{\theta}=\bm{\theta_0} \,\,\,\, \text{vs} \,\,\,\,  H_1: \bm{\theta} \neq \bm{\theta_0}$
+
+\item Prior: $\pi(\bm{\theta}|H_0)={1_{\bm{\theta_0}}(\bm{\theta_0})}$ and $\bm{\theta}|H_1, \bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$ 
+
+\item Marginal density: $m_i(\bm{x})=\int_{\Theta_i} f(\bm{x}|\bm{\theta})\pi(\bm{\theta}|H_i) \, d\bm{\theta} $, \, $i=0,1$
+
+\begin{itemize}
+
+\item  $m_0(\bm{x})=\frac{N!}{\prod_{i=1}^{k+1}x_i!}\prod_{i=1}^{k+1}{\theta_{0i}}^{x_i}$ 
+\item  $m_1(\bm{x})= \frac{N!}{\prod_{i=1}^{k+1}x_i!}\frac{B(\bm{\alpha}+\bm{x})}{B(\bm{\alpha})}$ 
+
+\end{itemize}
+
+\item Bayes factor: $B_{01}(\bm{x}) = \frac{m_0(\bm{x})}{m_1(\bm{x})} = \frac{\prod_{i=1}^{k+1}{(\theta_{0i}}^{x_i}) \prod_{i=1}^{k+1}[\Gamma(\alpha_i)] \Gamma [\sum_{i=1}^{k+1}(\alpha_i+x_i)]}{\Gamma(\sum_{i=1}^{k+1} \alpha_i) \prod_{i=1}^{k+1}\Gamma(\alpha_i+x_i)}$
+
+\item For an interesting application see \citet{pericchiTorres2011}.
+
+\end{itemize}
+
+\end{frame}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Parameter estimation}
+
+\begin{itemize}
+
+\item Prior: $\bm{\theta}|\bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$
+
+\item Posterior: $\bm{\theta} | \bm{\alpha}, \bm{x} \sim \operatorname{Dir}_k(\bm{\alpha} + \bm{x}) \rightarrow$ Mean, mode, credible intervals.
+
+\item For an interesting application see \citet{ley1996peculiar}.
+
+\end{itemize}
+
+\end{frame}
+
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Binomial - Beta Model}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Model selection}
+
+\begin{itemize}
+
+\item Likelihood: $x \sim \text{Bin}(N, \theta)$
+
+\item  Hypotheses: $ H_0: {\theta}={\theta_0} \,\,\,\, \text{vs} \,\,\,\,  H_1: {\theta} \neq \theta_0$
+
+\item Prior: $\pi(\theta|H_0)={1_{\theta_0}(\theta)}$ and $\theta| H_1 \sim \operatorname{Beta}($a$,$b$) $
+
+\item Marginal density: $m_i(x)= \int_0^1 f(x|\theta)\pi(\theta|H_i)d \theta, \,  i=0, 1$
+
+\begin{itemize}
+
+\item $m_0(x)=\binom{N}{x} {\theta_0}^{x}{(1-\theta_0)}^{N-x}$ 
+
+\item  $m_1(x) = \binom{N}{x}\frac{B(x+a, n-x+b)}{B(a,b)}$
+
+\end{itemize}
+
+\item Bayes factor: $B_{01}(x) = \frac{m_0(x)}{m_1(x)}  = \frac{\theta_0(1-\theta_0)^{N-x}\,\Gamma(a)\,\Gamma(b)\,\Gamma(n+a+b)}{\Gamma(a+b)\,\Gamma(n+a-x)\,\Gamma(x+a)}$ 
+
+\end{itemize}
+
+\end{frame}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Parameter estimation}
+
+\begin{itemize}
+
+\item Prior: $\theta \sim \operatorname{Beta}(a,b) $
+
+\item Posterior: $\theta | x \sim \operatorname{Beta}(a+x, b+N-x ) \rightarrow$ Mean, mode, credible intervals
+
+\end{itemize}
+
+\end{frame}
+
+%  Section
+%--------------------------------------------------------------
+\section{Code chunks}
+
+%  Sub-section
+%--------------------------------------------------------------
+\subsection{Python code}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}[fragile]{Some python code}
+
+This code prints the Fibonacci sequence:
+
+\begin{verbatim}
+nterms = int(input("How many terms? "))
+n1, n2 = 0, 1
+count = 0
+print("Fibonacci sequence:")
+while count < nterms:
+    print(n1)
+    nth = n1 + n2
+    n1 = n2
+    n2 = nth
+    count += 1
+}
+\end{verbatim}
+
+\end{frame}
+
+%  Sub-section
+%--------------------------------------------------------------
+\subsection{R code}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}[fragile]{Some R code}
+
+I also included a verbatim environment with background color:
+
+\begin{cverbatim}
+getmode <- function(v) {
+  
+  uniqv <- unique(v)
+  
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+  
+}
+\end{cverbatim}
+
+With this R code you can build a function that calculates the mode.
+
+\end{frame}
+
+% Bibliography page (can be commented out)
+%--------------------------------------------------------------
 \include{files/references-section}
 
+% End of the document
+%--------------------------------------------------------------
 \end{document}
-
-
-
-
 
 
 

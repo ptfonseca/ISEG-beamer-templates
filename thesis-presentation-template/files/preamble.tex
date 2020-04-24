@@ -14,6 +14,7 @@
 
 % Packages  and options
 %--------------------------------------------------------------  
+\usepackage{fancyvrb}
 \usepackage{textpos}                       
 \usepackage{wasysym}                     
 \usepackage{csquotes}                  
@@ -34,8 +35,7 @@
 \usepackage{bm} 
 \usepackage{tabularx}  
 \usepackage{tikz}
-\usepackage{fancyvrb}
-\PassOptionsToPackage{dvipsnames, table}{xcolor}
+\PassOptionsToPackage{fancyvrb, newverbs, dvipsnames, table}{xcolor}
 
 % ISEG name and logo
 %--------------------------------------------------------------  
@@ -68,7 +68,7 @@
 \setbeamercolor{local structure}{fg=Maroon} 
 
 % ISEG colors on the Itemize bullets 
-% Different bullete shape for each itemize level
+% Different bullet shapes for each itemize level
 %--------------------------------------------------------------  
 \setbeamertemplate{itemize item}{\color{Maroon}\newmoon}
 \setbeamertemplate{itemize subitem}{\color{Maroon}$\blacktriangleright$}
@@ -77,7 +77,7 @@
 % TOC colors and bullet shapes
 %--------------------------------------------------------------  
 \setbeamertemplate{section in toc}[circle]
-\setbeamercolor{section number projected}{bg=Maroon,fg=white}
+\setbeamercolor{section number projected}{bg=Maroon, fg=white}
 \setbeamertemplate{subsection in toc}{%
 \leavevmode\leftskip=5.65ex%
 \llap{\raisebox{0.2ex}{\textcolor{structure}{\color{Maroon}$\blacktriangleright$}}\kern1ex}%
@@ -130,6 +130,47 @@
     set border color=red!80!black,
   },
 }
+
+% Create the color for the verbatim background
+%--------------------------------------------------------------  
+\definecolor{cverbbg}{gray}{0.93}
+
+% New environment for verbatin with background color
+%--------------------------------------------------------------  
+\newenvironment{cverbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
+
+% Get rid of the "references" section in the header
+%------------------------------------------------------------
+\makeatletter
+\let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry%
+\def\beamer@writeslidentry@miniframesoff{%
+  \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+  {%else
+    % removed \addtocontents commands
+    \clearpage\beamer@notesactions%
+  }
+}
+\newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
+\newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
+\makeatother
+
+% Add vertical space between the items of the TOC
+%------------------------------------------------------------
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother
 
 % Bibliography packages and options
 %------------------------------------------------------------
@@ -202,7 +243,6 @@ natbib=true, backend=biber]{biblatex}
 
 % Font for references
 %------------------------------------------------------------
-
 \renewcommand\bibfont{\scriptsize}
 
 % If you have more than one page of references, you want to tell beamer
@@ -220,15 +260,8 @@ natbib=true, backend=biber]{biblatex}
 % No icon in references listing
 %------------------------------------------------------------
 \setbeamertemplate{bibliography item}{}
+
 % path to the .bib file
 %------------------------------------------------------------
-
 \addbibresource{files/references.bib}
 
-\makeatletter
-\patchcmd{\beamer@sectionintoc}
-  {\vfill}
-  {\vskip\itemsep}
-  {}
-  {}
-\makeatother
