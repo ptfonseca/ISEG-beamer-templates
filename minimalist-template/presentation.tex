@@ -30,18 +30,23 @@
 %--------------------------------------------------------------
 %--------------------------------------------------------------
 
+%  Section
+%--------------------------------------------------------------
+\section{Introduction}
+
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Before we start}
 
-In this presentation you will see:
+In this lecture you will see:
 
 \begin{itemize}
 
 \item a graph
 \item some formulas
 \item some code
+\item some customized environments
 \item some citations \citep{kass1995}
 
 \end{itemize}
@@ -56,18 +61,73 @@ In this presentation you will see:
 This picture is in the ``figures'' folder:
 
 \begin{figure}
-\includegraphics[scale=.5]{figures/outl.png}
+\includegraphics[scale=.5]{figures/graph.png}
 \caption{Fuel consumption (Hwy) vs engine size (displ)}
 \end{figure}
+
+\end{frame}
+
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Environments}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Definitions and theorems}
+
+I customized the, definition, theorem and block environments:
+
+\begin{definition}[Fibration]
+A fibration is a mapping between two topological spaces that has the homotopy lifting property for every space $X$.
+\end{definition}
+
+\begin{theorem}[Bayes]
+$P(\theta|\textbf{D}) = P(\theta ) \frac{P(\textbf{D} |\theta)}{P(\textbf{D})}$
+\end{theorem}
+
+\end{frame}
+
+% Frame
+%--------------------------------------------------------------
+\begin{frame}{The block environment}
+
+The block environment is more versatile. You can write whatever you want on the red block:
+
+\begin{block}{Pythagorean theorem}
+This is a theorem about right triangles and can be summarised in the next 
+equation 
+\[ x^2 + y^2 = z^2 \]
+\end{block}
+
+\begin{block}{Corollary}
+There's no right rectangle whose sides measure 3cm, 4cm, and 6cm.
+\end{block}
 
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Multinomial $\land$ Dirichlet model}
+\begin{frame}{Two part functions}
+I also included an environment that allows you to easily write two part functions:
 
-Model selection:
+$$|x| =\twopartdef{x}{x \geq 0} {-x} {x < 0}$$
+
+\end{frame}
+
+%  Section
+%--------------------------------------------------------------
+\section{Some formulas}
+
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Multinomial - Dirichlet Model}
+
+% Frame
+%--------------------------------------------------------------
+
+\begin{frame}{Bayesian stuff}
 
 \begin{itemize}
 
@@ -97,9 +157,7 @@ Model selection:
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Multinomial $\land$ Dirichlet model}
-
-Parameter estimation:
+\begin{frame}{Bayesian stuff}
 
 \begin{itemize}
 
@@ -109,17 +167,18 @@ Parameter estimation:
 
 \item For an interesting application see \citet{ley1996peculiar}.
 
-
 \end{itemize}
 
 \end{frame}
 
+%  Subsection
+%--------------------------------------------------------------
+\subsection{Binomial - Beta Model}
+
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Binomial $\land$ Dirichlet Beta}
-
-Model selection:
+\begin{frame}{More Bayesian stuff}
 
 \begin{itemize}
 
@@ -148,9 +207,7 @@ Model selection:
 % Frame
 %--------------------------------------------------------------
 
-\begin{frame}{Binomial $\land$ Dirichlet Beta}
-
-Parameter estimation:
+\begin{frame}{More Bayesian stuff}
 
 \begin{itemize}
 
@@ -161,6 +218,14 @@ Parameter estimation:
 \end{itemize}
 
 \end{frame}
+
+%  Section
+%--------------------------------------------------------------
+\section{Code chunks}
+
+%  Sub-section
+%--------------------------------------------------------------
+\subsection{Python code}
 
 % Frame
 %--------------------------------------------------------------
@@ -184,6 +249,10 @@ while count < nterms:
 \end{verbatim}
 
 \end{frame}
+
+%  Sub-section
+%--------------------------------------------------------------
+\subsection{R code}
 
 % Frame
 %--------------------------------------------------------------
