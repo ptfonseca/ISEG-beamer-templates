@@ -14,7 +14,7 @@ This repository contains three beamer templates tailored for [ISEG](https://www.
 
 - The thesis presentation template has a field for advisor/supervisor name
 - The lecture slides template has title and subtitle fields (for course name and lecture subject, respectively)
-- The minimalist template has no TOC frame, no TOC on the header, no sections and no subsections
+- The minimalist template has no TOC frame, no TOC on the headers, no sections and no subsections
   
 ## Tl;dr instructions
 
