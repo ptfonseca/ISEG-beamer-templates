@@ -1,0 +1,259 @@
+
+% Document class
+%--------------------------------------------------------------  
+\documentclass{beamer} 
+
+% Theme and subtheme
+%--------------------------------------------------------------
+\usetheme{Berlin}                             
+\usecolortheme{beaver}       
+
+% Disable the navigation symbols
+%--------------------------------------------------------------        
+\beamertemplatenavigationsymbolsempty  
+
+% Packages  and options
+%--------------------------------------------------------------  
+\usepackage{fancyvrb}
+\usepackage{textpos}                       
+\usepackage{wasysym}                     
+\usepackage{csquotes}                  
+\usepackage{wrapfig}                       
+\usepackage{microtype}                   
+\usepackage[labelfont=bf]{caption}   
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\newcommand{\dd}[1]{\mathrm{d}#1}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{adjustbox}
+\setbeamertemplate{caption}[numbered] 
+\usepackage{subcaption}
+\usepackage[none]{hyphenat} 
+\usepackage{bm} 
+\usepackage{tabularx}  
+\usepackage{tikz}
+\PassOptionsToPackage{fancyvrb, newverbs, dvipsnames, table}{xcolor}
+
+% ISEG name and logo
+%--------------------------------------------------------------  
+\titlegraphic{\includegraphics[width=1.5cm]{figures/logo}}
+\institute[ISEG Lisbon School of Economics \& Management]{\textbf {ISEG Lisbon School of Economics \& Management}}   
+
+% ISEG logo on the frame title
+%--------------------------------------------------------------  
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(.99\textwidth,-.9cm)
+\includegraphics[scale=.015]{figures/logo}
+\end{textblock*}}
+
+% Create the Maroon color
+%--------------------------------------------------------------  
+\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+
+% ISEG colors everywhere
+%--------------------------------------------------------------  
+\setbeamercolor{author in head/foot}{fg=Maroon}     
+\setbeamercolor{institute in head/foot}{fg=Maroon}  
+\setbeamercolor{frametitle}{fg=Maroon, bg=black!9} 
+\setbeamercolor{caption name}{fg=Maroon, bg=black!9}
+\setbeamercolor*{title}{fg=white, bg=Maroon}          
+\setbeamercolor{itemlist item}{fg=Maroon}               
+\setbeamercolor{section number projected}{bg=Maroon,fg=white}
+\setbeamercolor{subsection number projected}{bg=Maroon,fg=white}
+\setbeamercolor{subsubsection number projected}{bg=Maroon,fg=white}
+\setbeamercolor{block title}{use=structure,bg=Maroon,fg=white}
+\setbeamercolor{block body}{bg=black!9,fg=black}
+\setbeamercolor{local structure}{fg=Maroon} 
+
+% ISEG colors on the Itemize bullets 
+% Different bullet shapes for each itemize level
+%--------------------------------------------------------------  
+\setbeamertemplate{itemize item}{\color{Maroon}\newmoon}
+\setbeamertemplate{itemize subitem}{\color{Maroon}$\blacktriangleright$}
+\setbeamertemplate{itemize subsubitem}{\color{Maroon}$\blacksquare$}
+
+% TOC colors and bullet shapes
+%--------------------------------------------------------------  
+\setbeamertemplate{section in toc}[circle]
+\setbeamercolor{section number projected}{bg=Maroon, fg=white}
+\setbeamertemplate{subsection in toc}{%
+\leavevmode\leftskip=5.65ex%
+\llap{\raisebox{0.2ex}{\textcolor{structure}{\color{Maroon}$\blacktriangleright$}}\kern1ex}%
+\inserttocsubsection\par%  
+}
+
+% Uncomment the following lines if you want
+% theorems and definitions to be numbered:
+%-------------------------------------------------------------- 
+% \setbeamertemplate{theorems}[numbered]
+% \setbeamertemplate{definitions}[numbered]
+
+% New command to display two-part functions 
+%--------------------------------------------------------------  
+\newcommand{\twopartdef}[4] 
+{
+	\left\{
+		\begin{array}{ll}
+			#1 & \mbox{if } #2 
+			\\ \\
+			#3 & \mbox{if } #4
+		\end{array}
+	\right.
+}
+
+% New enviroment without headline on the frame header
+%--------------------------------------------------------------  
+\makeatletter 
+\newenvironment{noheadline}{
+\setbeamertemplate{headline}{}
+\addtobeamertemplate{frametitle}{\vspace*{-0.9\baselineskip}}{}
+}{}
+\makeatother
+
+% To highlight/color specific rows in tables
+%--------------------------------------------------------------  
+\usepackage[beamer,customcolors]{hf-tikz}
+
+\tikzset{hl/.style={
+    set fill color=red!80!black!40,
+    set border color=red!80!black,
+  },
+}
+
+% Create the color for the verbatim background
+%--------------------------------------------------------------  
+\definecolor{cverbbg}{gray}{0.93}
+
+% New environment for verbatin with background color
+%--------------------------------------------------------------  
+\newenvironment{cverbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
+
+% Get rid of the "references" section in the header
+%------------------------------------------------------------
+\makeatletter
+\let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry%
+\def\beamer@writeslidentry@miniframesoff{%
+  \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+  {%else
+    % removed \addtocontents commands
+    \clearpage\beamer@notesactions%
+  }
+}
+\newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
+\newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
+\makeatother
+
+% Add vertical space between the items of the TOC
+%------------------------------------------------------------
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother
+
+% Bibliography packages and options
+%------------------------------------------------------------
+\usepackage[
+	style=authoryear,
+ 	bibencoding=utf8, 
+ 	minnames=1, 
+ 	maxnames=3,
+	maxbibnames=3, 
+	backref=false, 
+	natbib=true, 
+	dashed=false, 
+	terseinits=true, 
+	giveninits=true, 
+	uniquename=false, 
+	uniquelist=true, 
+	labeldateparts=true,
+	doi=false, 
+	isbn=false, 
+	eprint = false,        % I disabled this. check if its appropriate
+	url = false,             % I disabled this. check if its appropriate
+natbib=true, backend=biber]{biblatex}
+
+\DefineBibliographyStrings{english}{
+    backrefpage = {Cited on page},
+    backrefpages = {Cited on pages},
+}
+
+% Change the default bibliography formatting to be more "statistical"
+%------------------------------------------------------------
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+\DeclareFieldFormat[book]{url}{}
+\DeclareFieldFormat[inbook]{url}{}
+\DeclareFieldFormat[thesis]{url}{}
+\DeclareFieldFormat[thesis]{url}{}
+\DeclareFieldFormat[incollection]{url}{}
+\DeclareFieldFormat[inproceedings]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+\DeclareFieldFormat[thesis]{citetitle}{#1}
+\DeclareFieldFormat[thesis]{title}{#1} 
+
+% No dot before number of articles
+%------------------------------------------------------------
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+
+% Remove In: for an article.
+%------------------------------------------------------------
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+  
+% Get rid of notes in citations
+%------------------------------------------------------------
+\AtEveryBibitem{\clearfield{note}}
+
+% Get rid of months in citations
+%------------------------------------------------------------
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+\raggedbottom
+
+% Font for references
+%------------------------------------------------------------
+\renewcommand\bibfont{\scriptsize}
+
+% If you have more than one page of references, you want to tell beamer
+% to put the continuation section label from the second slide onwards
+%------------------------------------------------------------
+\setbeamertemplate{frametitle continuation}[from second]
+
+% Get rid of all the colours
+%------------------------------------------------------------
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry author}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black}
+\setbeamercolor*{bibliography entry note}{fg=black}
+
+% No icon in references listing
+%------------------------------------------------------------
+\setbeamertemplate{bibliography item}{}
+
+% path to the .bib file
+%------------------------------------------------------------
+\addbibresource{files/references.bib}
+
