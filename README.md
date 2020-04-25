@@ -69,7 +69,7 @@ In the thesis presentation template you also need to edit the advisor's name:
 ```tex
 % Your name and advisor's name
 %--------------------------------------------------------------
-\author[Pedro Fonseca]{\textbf{Pedro Fonseca} \\ \footnotesize Advisor: Prof Dr. Rui Paulo}
+\author[Pedro Fonseca]{\textbf {Pedro Fonseca} \\ \footnotesize Advisor: Prof Dr. Rui Paulo}
 ```
 
 If you don´t want a slide with the TOC after the title page, comment out or delete the inclusion of the contents-page.tex file:
