@@ -120,4 +120,4 @@ If you don't want to print the bibliography on the last slide, or if you don't u
 
 ## Related projects
 
-I also developed ISEG-themed r markdown templates. See  [this](https://github.com/pedro-teles-fonseca/ISEG-r-markdown) repository.
+I also developed ISEG-themed r markdown templates. See  [this](https://github.com/pedro-teles-fonseca/ISEG-r-markdown-templates) repository.
