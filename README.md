@@ -51,7 +51,7 @@ In the presentation.tex file you need to edit the *title* and *author* fields. U
 
 % Your name
 %--------------------------------------------------------------
-\author[Pedro Fonseca]{\textbf{Pedro Fonseca}}
+\author[Pedro Fonseca]{\textbf {Pedro Fonseca}}
 
 ```
 The name and the title between the square brackets will show up on the footer of the frames and the name and title between curly brackets will be displayed in the title page. In the lecture slides template the subtitle field is uncommented by default, so you need to comment it out or delete it if you don't want to use it.
