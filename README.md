@@ -8,7 +8,7 @@ This repository contains three beamer templates tailored for [ISEG](https://www.
 
 - A template for [lecture slides](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/lecture-slides-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/lecture-slides-template/presentationpdf))
 
-- A [minimalist multi-purpose template](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/minimalist-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/minimalist-template/presentation.pdf))
+- A [minimalist multi-purpose](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/minimalist-template) template (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/minimalist-template/presentation.pdf))
 
 ## About the templates
 
@@ -34,7 +34,7 @@ This repository contains three beamer templates tailored for [ISEG](https://www.
 
 ### Customization
 
-I made most of the customizations on scripts that are called from the main tex file so that you only have to edit **presentation.tex**. Compiling this file will render a presentation in pdf format called **presentation.pdf**. You can find both these files in the template's main folder.
+I made most of the customizations on scripts that are called from the main tex file so that you only have to edit presentation.tex. Compiling this file will render a presentation in pdf format called presentation.pdf. You can find both these files in the template's main folder.
 
 In the **presentation.tex** file you need to edit the *title* and *author* fields. Uncomment the *subtitle* field in case you want to use it.
 
@@ -117,6 +117,13 @@ some text
 \end{verbatim}
 
 \end{frame}
+```
+
+If you want your definitions and theorems to be numbered go to the preamble.tex file in the files folder and uncomment the following lines:
+
+```tex
+% \setbeamertemplate{theorems}[numbered]
+% \setbeamertemplate{definitions}[numbered]
 ```
 
 ### References
