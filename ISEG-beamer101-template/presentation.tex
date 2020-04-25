@@ -34,219 +34,159 @@
 %--------------------------------------------------------------
 
 \begin{frame}{The first frame}
-
-\begin{itemize}
-
-\item This is a simple beamer template with ISEG's colors
-
-\item In the next slides wou will see some examples of what you can do with beamer.
-
-\item Inspect the underlying code to learn how to make your own frames.
-
-\end{itemize}
-
+	\begin{itemize}
+		\item This is a simple beamer template with ISEG's colors
+		\item In the next slides wou will see some examples of what you can do with beamer.
+		\item Inspect the underlying code to learn how to make your own frames.
+	\end{itemize}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Lists of items}
-
-In this presentation you will learn how to:
-
-\begin{itemize}
-
-\item make ordered and unordered lists of items
-\item include pictures
-\item use mathematical formulas
-\item display code
-\item create theorems and definitions
-
-\end{itemize}
-
+	In this presentation you will learn how to:
+	\begin{itemize}
+	\item make ordered and unordered lists of items
+	\item include pictures
+	\item use mathematical formulas
+	\item display code
+	\item create theorems and definitions
+	\end{itemize}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Enumeration of items}
-
-In the last frame you learned how to create a list of items. Now lets create an enumeration of items:
-
-\begin{enumerate}
-
-\item make ordered and unordered lists of items
-\item include pictures
-\item use mathematical formulas
-\item display code
-\item create theorems and definitions
-
-\end{enumerate}
-
+	In the last frame you learned how to create a list of items. Now lets create an enumeration of items:
+	\begin{enumerate}
+	\item make ordered and unordered lists of items
+	\item include pictures
+	\item use mathematical formulas
+	\item display code
+	\item create theorems and definitions
+	\end{enumerate}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Itemized lists inside itemized lists}
-
-You can have itemized lists inside itemized lists:
-
-\begin{itemize}
-
-\item lists of items
-
-\begin{itemize}
-\item ordered
-\item unordered
-\end{itemize}
-
-\item include pictures
-\item use mathematical formulas
-\item display code
-
-\begin{itemize}
-\item Python code
-\item R code
-\end{itemize}
-
-\item create theorems and definitions
-
-\end{itemize}
-
+	You can have itemized lists inside itemized lists:
+	\begin{itemize}
+	\item lists of items
+		\begin{itemize}
+		\item ordered
+		\item unordered
+		\end{itemize}
+	\item include pictures
+	\item use mathematical formulas
+	\item display code
+		\begin{itemize}
+		\item Python code
+		\item R code
+		\end{itemize}
+	\item create theorems and definitions
+	\end{itemize}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Including pictures}
-
-This picture is in the ``figures'' folder. We also included a caption:
-
-\begin{figure}
-\includegraphics[scale=.5]{figures/graph.png}
-\caption{Fuel consumption (Hwy) vs engine size (displ)}
-\end{figure}
-
+	This picture is in the ``figures'' folder. We also included a caption:
+	\begin{figure}
+	\includegraphics[scale=.5]{figures/graph.png}
+	\caption{Fuel consumption (Hwy) vs engine size (displ)}
+	\end{figure}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Definitions and theorems}
-
-You can display definitions and theorems:
-
-\begin{definition}[Fibration]
-A fibration is a mapping between two topological spaces that has the homotopy lifting property for every space $X$.
-\end{definition}
-
-Latex is very useful to write mathematical expressions:
-
-\begin{theorem}[Bayes]
-$P(\theta|\textbf{D}) = P(\theta ) \frac{P(\textbf{D} |\theta)}{P(\textbf{D})}$
-\end{theorem}
-
+	You can display definitions and theorems:
+	\begin{definition}[Fibration]
+	A fibration is a mapping between two topological spaces that has the homotopy lifting property for every space $X$.
+	\end{definition}
+	Latex is very useful to write mathematical expressions:
+	\begin{theorem}[Bayes]
+	$P(\theta|\textbf{D}) = P(\theta ) \frac{P(\textbf{D} |\theta)}{P(\textbf{D})}$
+	\end{theorem}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 \begin{frame}{The block environment}
-
-The block environment is more versatile. You can write whatever you want on the red block:
-
-\begin{block}{Pythagorean theorem}
-This is a theorem about right triangles and can be summarised in the next 
-equation 
-\[ x^2 + y^2 = z^2 \]
-\end{block}
-
-\begin{block}{Corollary}
-There's no right rectangle whose sides measure 3cm, 4cm, and 6cm.
-\end{block}
-
+	The block environment is more versatile. You can write whatever you want on the red block:
+	\begin{block}{Pythagorean theorem}
+	This is a theorem about right triangles and can be summarised in the next 
+	equation 
+	\[ x^2 + y^2 = z^2 \]
+	\end{block}
+	\begin{block}{Corollary}
+	There's no right rectangle whose sides measure 3cm, 4cm, and 6cm.
+	\end{block}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Two part functions}
-I also included an environment that allows you to easily write two part functions:
-
-$$|x| =\twopartdef{x}{x \geq 0} {-x} {x < 0}$$
-
+	I also included an environment that allows you to easily write two part functions:
+	$$|x| =\twopartdef{x}{x \geq 0} {-x} {x < 0}$$
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}{Examples of mathematical expressions}
-
-\begin{itemize}
-
-\item Likelihood: $\bm{x}|\bm{\theta} \sim \mathcal{M}_k(N,\bm{\theta})$
-
-\item Hypotheses:  $ H_0: \bm{\theta}=\bm{\theta_0} \,\,\,\, \text{vs} \,\,\,\,  H_1: \bm{\theta} \neq \bm{\theta_0}$
-
-\item Prior: $\pi(\bm{\theta}|H_0)={1_{\bm{\theta_0}}(\bm{\theta_0})}$ and $\bm{\theta}|H_1, \bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$ 
-
-\item Marginal density: $m_i(\bm{x})=\int_{\Theta_i} f(\bm{x}|\bm{\theta})\pi(\bm{\theta}|H_i) \, d\bm{\theta} $, \, $i=0,1$
-
-\begin{itemize}
-
-\item  $m_0(\bm{x})=\frac{N!}{\prod_{i=1}^{k+1}x_i!}\prod_{i=1}^{k+1}{\theta_{0i}}^{x_i}$ 
-\item  $m_1(\bm{x})= \frac{N!}{\prod_{i=1}^{k+1}x_i!}\frac{B(\bm{\alpha}+\bm{x})}{B(\bm{\alpha})}$ 
-
-\end{itemize}
-
-\item Bayes factor: $B_{01}(\bm{x}) = \frac{m_0(\bm{x})}{m_1(\bm{x})} = \frac{\prod_{i=1}^{k+1}{(\theta_{0i}}^{x_i}) \prod_{i=1}^{k+1}[\Gamma(\alpha_i)] \Gamma [\sum_{i=1}^{k+1}(\alpha_i+x_i)]}{\Gamma(\sum_{i=1}^{k+1} \alpha_i) \prod_{i=1}^{k+1}\Gamma(\alpha_i+x_i)}$
-
-\end{itemize}
-
+	\begin{itemize}
+	\item Likelihood: $\bm{x}|\bm{\theta} \sim \mathcal{M}_k(N,\bm{\theta})$
+	\item Hypotheses:  $ H_0: \bm{\theta}=\bm{\theta_0} \,\,\,\, \text{vs} \,\,\,\,  H_1: \bm{\theta} \neq \bm{\theta_0}$
+	\item Prior: $\pi(\bm{\theta}|H_0)={1_{\bm{\theta_0}}(\bm{\theta_0})}$ and $\bm{\theta}|H_1, \bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$ 
+	\item Marginal density: $m_i(\bm{x})=\int_{\Theta_i} f(\bm{x}|\bm{\theta})\pi(\bm{\theta}|H_i) \, d\bm{\theta} $, \, $i=0,1$
+		\begin{itemize}
+		\item  $m_0(\bm{x})=\frac{N!}{\prod_{i=1}^{k+1}x_i!}\prod_{i=1}^{k+1}{\theta_{0i}}^{x_i}$ 
+		\item  $m_1(\bm{x})= \frac{N!}{\prod_{i=1}^{k+1}x_i!}\frac{B(\bm{\alpha}+\bm{x})}{B(\bm{\alpha})}$ 
+		\end{itemize}
+	\item Bayes factor: $B_{01}(\bm{x}) = \frac{m_0(\bm{x})}{m_1(\bm{x})} = \frac{\prod_{i=1}^{k+1}{(\theta_{0i}}^{x_i}) \prod_{i=1}^{k+1}[\Gamma(\alpha_i)] \Gamma [\sum_{i=1}^{k+1}(\alpha_i+x_i)]}{\Gamma(\sum_{i=1}^{k+1} \alpha_i) \prod_{i=1}^{k+1}\Gamma(\alpha_i+x_i)}$
+	\end{itemize}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}[fragile]{Python code looks good on verbatim}
-
-Code is usually displayed in verbatim. This code prints the Fibonacci sequence:
-
-\begin{verbatim}
-nterms = int(input("How many terms? "))
-n1, n2 = 0, 1
-count = 0
-print("Fibonacci sequence:")
-while count < nterms:
-    print(n1)
-    nth = n1 + n2
-    n1 = n2
-    n2 = nth
-    count += 1
-}
-\end{verbatim}
-
+	Code is usually displayed in verbatim. This code prints the Fibonacci sequence:
+	\begin{verbatim}
+	nterms = int(input("How many terms? "))
+	n1, n2 = 0, 1
+	count = 0
+	print("Fibonacci sequence:")
+	while count < nterms:
+	    print(n1)
+	    nth = n1 + n2
+	    n1 = n2
+	    n2 = nth
+	    count += 1
+	}
+	\end{verbatim}
 \end{frame}
 
 % Frame
 %--------------------------------------------------------------
 
 \begin{frame}[fragile]{R code looks good too}
-
-I also included a verbatim environment with background color:
-
-\begin{cverbatim}
+	I also included a verbatim environment with background color:
+	\begin{cverbatim}
 getmode <- function(v) {
-  
-  uniqv <- unique(v)
-  
-  uniqv[which.max(tabulate(match(v, uniqv)))]
-  
-}
-\end{cverbatim}
-
-With this R code you can build a function that calculates the mode.
-
+	uniqv <- unique(v)
+	uniqv[which.max(tabulate(match(v, uniqv)))]
+	}
+	\end{cverbatim}
+	With this R code you can build a function that calculates the mode.
 \end{frame}
 
 % End of the document
