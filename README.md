@@ -4,7 +4,7 @@
 
 This repository contains four beamer templates tailored for [ISEG](https://www.iseg.ulisboa.pt/aquila/instituicao/ISEG/?locale=en) students and faculty:
 
-- An [introductory](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/ISEG-beamer101-template) and easy to use  template (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/blob/master/ISEG-beamer101-template/presentation.pdf))
+- An [introductory](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/ISEG-beamer101-template) and didactic  template (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/blob/master/ISEG-beamer101-template/presentation.pdf))
  
 - A template for [thesis presentations](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/thesis-presentation-template) (see [pdf](https://github.com/pedro-teles-fonseca/ISEG-beamer-templates/tree/master/thesis-presentation-template/presentation.pdf))
 
@@ -17,7 +17,7 @@ This repository contains four beamer templates tailored for [ISEG](https://www.i
 - The thesis presentation template has a field for advisor/supervisor name
 - The lecture slides template has title and subtitle fields
 - The introductory template has no TOC, no sections and no subsections
-- The minimalist template is similar to the introductory template but has text on the headline/footline
+- The minimalist template is similar to the introductory template but has no text on the headline/footline
  
 ## Tl;dr instructions
 
@@ -37,24 +37,32 @@ This repository contains four beamer templates tailored for [ISEG](https://www.i
 
 ### Structure
 
-I made the customization on files that are called from the main tex file (presentation.tex) so that you only have to edit one file. Compiling presentation.tex will render a presentation in pdf format called presentation.pdf. You can find both these files in the template's main folder.
+I made the customizations on files that are called from the main tex file (presentation.tex) so that you only have to edit one file. Compiling presentation.tex will render a presentation in pdf format called presentation.pdf. You can find both these files in the template's main folder.
 
 ### Customization
 
-In the presentation.tex file you need to edit the *title* and *author* fields. Uncomment the *subtitle* field in case you want to use it. 
+In the presentation.tex file you need to edit the *title* and *author* fields. Uncomment the *subtitle* field if you want to use it. 
 
 ```tex
 % Title and subtitle
 %--------------------------------------------------------------
-\title[Presentation with LaTeX]{Presentation with \LaTeX}
-%\subtitle{A user friendly template}
+\title[Presentation Title]{Presentation Title}
+%\subtitle{Presentation Subtitle}
 
 % Your name
 %--------------------------------------------------------------
-\author[Pedro Fonseca]{\textbf {Pedro Fonseca}}
+\author[Your Name]{\textbf {Your Name}}
 
 ```
 The name and title between the square brackets will be displayed on the footline of the frames and the name and title between curly brackets will be displayed in the title page. In the lecture slides template the subtitle field is uncommented by default.
+
+In the thesis presentation template you also need to edit the advisor's name:
+
+```tex
+% Your name and advisor's name
+%--------------------------------------------------------------
+\author[Your Name]{\textbf {Your Name} \\ \footnotesize Advisor: Prof Dr. Your Advisor's name}
+```
 
 You can edit the date field. By default, the presentation will display the date when it was compiled:
 
@@ -64,15 +72,7 @@ You can edit the date field. By default, the presentation will display the date 
 \date{\today}
 ```
 
-In the thesis presentation template you also need to edit the advisor's name:
-
-```tex
-% Your name and advisor's name
-%--------------------------------------------------------------
-\author[Pedro Fonseca]{\textbf {Pedro Fonseca} \\ \footnotesize Advisor: Prof Dr. Rui Paulo}
-```
-
-If you don´t want a slide with the TOC after the title page, comment out or delete the inclusion of the contents-page.tex file:
+If you are using the thesis or lecture slide templates but you don´t want a slide with the TOC after the title page, comment out or delete the inclusion of the contents-page.tex file:
 
 ```tex
 % Table of contents page (can be commented out)
