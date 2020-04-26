@@ -16,9 +16,9 @@ This repository contains four beamer templates tailored for [ISEG](https://www.i
 
 - The thesis presentation template has a field for advisor/supervisor name
 - The lecture slides template has title and subtitle fields
-- The minimalist template has no TOC, no sections and no subsections
-- The introductory template is similar to the minimalist but has no bibliography.
-  
+- The introductory template has no TOC, no sections and no subsections
+- The minimalist template is similar to the introductory template but has text on the headline/footline
+ 
 ## Tl;dr instructions
 
 1. Download or clone this repository
@@ -54,7 +54,7 @@ In the presentation.tex file you need to edit the *title* and *author* fields. U
 \author[Pedro Fonseca]{\textbf {Pedro Fonseca}}
 
 ```
-The name and the title between the square brackets will show up on the footer of the frames and the name and title between curly brackets will be displayed in the title page. In the lecture slides template the subtitle field is uncommented by default, so you need to comment it out or delete it if you don't want to use it.
+The name and title between the square brackets will be displayed on the footline of the frames and the name and title between curly brackets will be displayed in the title page. In the lecture slides template the subtitle field is uncommented by default.
 
 You can edit the date field. By default, the presentation will display the date when it was compiled:
 
