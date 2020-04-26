@@ -5,12 +5,12 @@
 
 % Title and subtitle
 %--------------------------------------------------------------
-\title[Lecture slides with LaTeX]{Lecture slides with \LaTeX}
-\subtitle{A user friendly template}
+\title[Course name]{Course name}
+\subtitle{Lecture Topic}
 
 % Your name
 %--------------------------------------------------------------
-\author[Pedro Fonseca]{\textbf {Pedro Fonseca}}
+\author[Your name]{\textbf {Your name}}
 
 % Date
 %--------------------------------------------------------------
@@ -38,10 +38,13 @@
 %--------------------------------------------------------------
 \section{Introduction}
 
+%  Section
+%--------------------------------------------------------------
+\subsection{Before we start}
+
 % Frame
 %--------------------------------------------------------------
-
-\begin{frame}{Before we start}
+\begin{frame}{About this lecture}
 	In this lecture you will see:
 	\begin{itemize}
 	\item a graph
@@ -54,7 +57,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{A scatterplot}
 	This picture is in the ``figures'' folder:
 	\begin{figure}
@@ -69,7 +71,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Definitions and theorems}
 	I customized the definition theorem and block environments:
 	\begin{definition}[Fibration]
@@ -96,7 +97,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Two part functions}
 	I also included an environment that allows you to easily write two part functions:
 	$$|x| =\twopartdef{x}{x \geq 0} {-x} {x < 0}$$
@@ -112,7 +112,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Bayesian stuff}
 	\begin{itemize}
 	\item Likelihood: $\bm{x}|\bm{\theta} \sim \mathcal{M}_k(N,\bm{\theta})$
@@ -130,7 +129,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Bayesian stuff}
 	\begin{itemize}
 	\item Prior: $\bm{\theta}|\bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$
@@ -145,7 +143,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{More Bayesian stuff}
 \begin{itemize}
 	\item Likelihood: $x \sim \text{Bin}(N, \theta)$
@@ -162,7 +159,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{More Bayesian stuff}
 	\begin{itemize}
 	\item Prior: $\theta \sim \operatorname{Beta}(a,b) $
@@ -180,7 +176,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}[fragile]{Python code looks good on verbatim}
 	This code prints the Fibonacci sequence:
 	\begin{verbatim}
@@ -204,7 +199,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}[fragile]{Some R code}
 I also included a verbatim environment with background color:
 	\begin{cverbatim}
