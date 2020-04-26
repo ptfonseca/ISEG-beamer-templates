@@ -20,15 +20,16 @@
 %--------------------------------------------------------------
 \begin{document}
 
-% Title page
-%--------------------------------------------------------------
-\include{files/title-page}
-
 %--------------------------------------------------------------
 %--------------------------------------------------------------
 %  This is where the frames begin
 %--------------------------------------------------------------
 %--------------------------------------------------------------
+
+% Frame
+%--------------------------------------------------------------
+
+\include{files/title-page}
 
 % Frame
 %--------------------------------------------------------------
@@ -49,6 +50,7 @@
 	\begin{itemize}
 	\item make ordered and unordered lists of items
 	\item include pictures
+	\item make citations
 	\item use mathematical formulas
 	\item display code
 	\item create theorems and definitions
@@ -105,6 +107,17 @@
 % Frame
 %--------------------------------------------------------------
 
+\begin{frame}{Three ways to make citations}
+	\begin{itemize}
+	\item \cite{kass1995}
+	\item \citep{kass1995}
+	\item \citet{kass1995}
+	\end{itemize}
+\end{frame}
+
+% Frame
+%--------------------------------------------------------------
+
 \begin{frame}{Definitions and theorems}
 	You can display definitions and theorems:
 	\begin{definition}[Fibration]
@@ -152,6 +165,7 @@
 		\item  $m_1(\bm{x})= \frac{N!}{\prod_{i=1}^{k+1}x_i!}\frac{B(\bm{\alpha}+\bm{x})}{B(\bm{\alpha})}$ 
 		\end{itemize}
 	\item Bayes factor: $B_{01}(\bm{x}) = \frac{m_0(\bm{x})}{m_1(\bm{x})} = \frac{\prod_{i=1}^{k+1}{(\theta_{0i}}^{x_i}) \prod_{i=1}^{k+1}[\Gamma(\alpha_i)] \Gamma [\sum_{i=1}^{k+1}(\alpha_i+x_i)]}{\Gamma(\sum_{i=1}^{k+1} \alpha_i) \prod_{i=1}^{k+1}\Gamma(\alpha_i+x_i)}$
+	\item For an interesting applicaton see \citet{pericchiTorres2011}
 	\end{itemize}
 \end{frame}
 
@@ -188,6 +202,10 @@ getmode <- function(v) {
 	\end{cverbatim}
 	With this R code you can build a function that calculates the mode.
 \end{frame}
+
+% Bibliography page (can be commented out)
+%--------------------------------------------------------------
+\include{files/references-section}
 
 % End of the document
 %--------------------------------------------------------------
