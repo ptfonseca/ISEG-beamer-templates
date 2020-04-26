@@ -5,12 +5,12 @@
 
 % Title and subtitle
 %--------------------------------------------------------------
-\title[Thesis presentation with Latex]{Thesis presentation with \LaTeX}
+\title[Your thesis title]{Your thesis title}
 % \subtitle{A user friendly template}
 
 % Your name and advisor's name
 %--------------------------------------------------------------
-\author[Pedro Fonseca]{\textbf {Pedro Fonseca} \\ \footnotesize Advisor: Prof Dr. Rui Paulo}
+\author[Your Name]{\textbf {Your Name} \\ \footnotesize Advisor: Prof Dr. Your Advisor's Name}
 
 % Date
 %--------------------------------------------------------------
@@ -38,10 +38,13 @@
 %--------------------------------------------------------------
 \section{Introduction}
 
+%  Section
+%--------------------------------------------------------------
+\subsection{Before we start}
+
 % Frame
 %--------------------------------------------------------------
-
-\begin{frame}{Before we start}
+\begin{frame}{About this lecture}
 	In this lecture you will see:
 	\begin{itemize}
 	\item a graph
@@ -54,7 +57,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{A scatterplot}
 	This picture is in the ``figures'' folder:
 	\begin{figure}
@@ -63,13 +65,22 @@
 	\end{figure}
 \end{frame}
 
+% Frame
+%--------------------------------------------------------------
+\begin{frame}{Three ways to make citations}
+	\begin{itemize}
+	\item \cite{kass1995}
+	\item \citep{kass1995}
+	\item \citet{kass1995}
+	\end{itemize}
+\end{frame}
+
 %  Subsection
 %--------------------------------------------------------------
 \subsection{Environments}
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Definitions and theorems}
 	I customized the definition theorem and block environments:
 	\begin{definition}[Fibration]
@@ -96,7 +107,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Two part functions}
 	I also included an environment that allows you to easily write two part functions:
 	$$|x| =\twopartdef{x}{x \geq 0} {-x} {x < 0}$$
@@ -112,7 +122,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Bayesian stuff}
 	\begin{itemize}
 	\item Likelihood: $\bm{x}|\bm{\theta} \sim \mathcal{M}_k(N,\bm{\theta})$
@@ -130,7 +139,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{Bayesian stuff}
 	\begin{itemize}
 	\item Prior: $\bm{\theta}|\bm{\alpha} \sim \operatorname{Dir}_k(\bm{\alpha})$
@@ -145,7 +153,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{More Bayesian stuff}
 \begin{itemize}
 	\item Likelihood: $x \sim \text{Bin}(N, \theta)$
@@ -162,7 +169,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}{More Bayesian stuff}
 	\begin{itemize}
 	\item Prior: $\theta \sim \operatorname{Beta}(a,b) $
@@ -180,7 +186,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}[fragile]{Python code looks good on verbatim}
 	This code prints the Fibonacci sequence:
 	\begin{verbatim}
@@ -204,7 +209,6 @@
 
 % Frame
 %--------------------------------------------------------------
-
 \begin{frame}[fragile]{Some R code}
 I also included a verbatim environment with background color:
 	\begin{cverbatim}
@@ -224,18 +228,3 @@ getmode <- function(v) {
 % End of the document
 %--------------------------------------------------------------
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
