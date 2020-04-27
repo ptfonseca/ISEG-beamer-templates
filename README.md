@@ -51,7 +51,7 @@ In the presentation.tex file you need to edit the *title* and *author* fields. U
 
 % Your name
 %--------------------------------------------------------------
-\author[Your Name]{\textbf {Your Name}}
+\author[Your Name]{Your Name}
 
 ```
 The name and title between the square brackets will be displayed on the footline of the frames and the name and title between curly brackets will be displayed in the title page. In the lecture slides template the subtitle field is uncommented by default.
@@ -61,7 +61,7 @@ In the thesis presentation template you also need to edit the advisor's name:
 ```tex
 % Your name and advisor's name
 %--------------------------------------------------------------
-\author[Your Name]{\textbf {Your Name} \\ \footnotesize Advisor: Prof Dr. Your Advisor's name}
+\author[Your Name]{Your Name \\ \footnotesize{\normalfont Advisor: Prof Dr. Your Advisor's Name}}
 ```
 
 You can edit the date field. By default, the presentation will display the date when it was compiled:
@@ -72,12 +72,14 @@ You can edit the date field. By default, the presentation will display the date 
 \date{\today}
 ```
 
-If you are using the thesis or lecture slide templates but you don´t want a slide with the TOC after the title page, comment out or delete the inclusion of the contents-page.tex file:
+If you are using the thesis or lecture slides template but you don´t want to print a TOC after the title slide, comment out or delete this frame:
 
 ```tex
-% Table of contents page (can be commented out)
+% Frame - table of contents (can be commented out)
 %--------------------------------------------------------------
-\include{files/contents-page}
+\begin{frame}{Contents}
+	\tableofcontents
+\end{frame}
 ```
 
 If you want your definitions and theorems to be numbered go to the preamble.tex file in the files folder and uncomment the following lines:
@@ -92,20 +94,21 @@ Build your frames after these commented lines:
 ```tex
 %--------------------------------------------------------------
 %--------------------------------------------------------------
-%  This is where the frames begin
+%  Start building your frames here
 %--------------------------------------------------------------
 %--------------------------------------------------------------
 ```
 
-This is what a basic frame looks like:
+This is what a typical frame looks like:
 
 ```tex
 \begin{frame}{frame title}
-
-frame content
-
+    frame content
 \end{frame}
 ```
+
+
+
 ### Citations
 
 If you use citations, paste them in the references.bib file in biblatex format or replace references.bib with a file of the same name where you have your citations. I recommend using [Jabref](http://www.jabref.org) to organize your citations and generate bib files.
