@@ -10,7 +10,7 @@
 
 % Your name
 %--------------------------------------------------------------
-\author[Your name]{\textbf {Your name}}
+\author[Your name]{Your name}
 
 % Date
 %--------------------------------------------------------------
@@ -20,19 +20,21 @@
 %--------------------------------------------------------------
 \begin{document}
 
-% Title page
-%--------------------------------------------------------------
-\include{files/title-page}
-
-% Table of contents page (can be commented out)
-%--------------------------------------------------------------
-\include{files/contents-page}
-
 %--------------------------------------------------------------
 %--------------------------------------------------------------
 %  This is where the frames begin
 %--------------------------------------------------------------
 %--------------------------------------------------------------
+
+% Frame - title page
+%--------------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+% Frame - table of contents page (can be commented out)
+%--------------------------------------------------------------
+\include{files/contents-page}
 
 %  Section
 %--------------------------------------------------------------
@@ -222,7 +224,7 @@ getmode <- function(v) {
 	With this R code you can build a function that calculates the mode.
 \end{frame}
 
-% Bibliography page (can be commented out)
+% Bibliography frames (can be commented out)
 %--------------------------------------------------------------
 \include{files/references-section}
 

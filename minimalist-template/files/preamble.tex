@@ -42,7 +42,7 @@
 % ISEG name and logo
 %--------------------------------------------------------------  
 \titlegraphic{\includegraphics[width=1.5cm]{figures/logo}}
-\institute[ISEG Lisbon School of Economics \& Management]{\textbf {ISEG Lisbon School of Economics \& Management}}   
+\institute[ISEG Lisbon School of Economics \& Management]{ISEG Lisbon School of Economics \& Management}
 
 % ISEG logo on the frame title
 %--------------------------------------------------------------  
@@ -187,13 +187,13 @@
 \vskip1em\par
 
 \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{author}
-\usebeamerfont{author}\insertauthor
+\usebeamerfont{author}\textbf{\insertauthor}
 \end{beamercolorbox}
 
 {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
 
 \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{institute}
-\usebeamerfont{institute}\insertinstitute
+\usebeamerfont{institute}\textbf{\insertinstitute}
 \end{beamercolorbox}
 
 \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=true]{date}
@@ -201,6 +201,17 @@
 \end{beamercolorbox}\vskip0.5em
 
 }
+
+% Hide text from the footline of the title page
+%--------------------------------------------------------------
+\makeatletter
+\def\ps@navigation@titlepage{%
+\setbeamercolor{author in head/foot}{use=palette secondary, fg=palette secondary.bg} 
+\setbeamercolor{title in head/foot}{use=palette tertiary, fg=palette tertiary.bg} 
+\setbeamercolor{institute in head/foot}{use=palette secondary, fg=palette secondary.bg} 
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
 
 % Bibliography packages and options
 %------------------------------------------------------------
